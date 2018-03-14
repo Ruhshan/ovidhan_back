@@ -19,8 +19,12 @@ def search_word(query):
     soup = BeautifulSoup(response.data, "html.parser")
 
     w_info = soup.find("div", {"id": "w_info"})
-    stl3 = w_info.find("span", {"class": "stl3"})
-    format1 = w_info.find("span", {"class": "format1"})
+    try:
+        stl3 = w_info.find("span", {"class":"stl3"})
+        format1 = w_info.find("span", {"class":"format1"})
+    except:
+        stl3 = stl3 = '<span class="stl3" style="font-family:SolaimanLipi, TonnyBanglaMJ,  Times, serif"> {}</span>'.format(query)
+        format1 = '<span class="format1" style="font-family:SolaimanLipi, TonnyBanglaMJ,  Times, serif"> শব্দটি পাওয়া যায়নি </span>'
 
     result = {'query':str(stl3), 'meaning':str(format1)}
     print(json.dumps(result))

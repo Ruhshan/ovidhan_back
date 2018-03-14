@@ -25,7 +25,7 @@ SECRET_KEY = 'r1-npv4b@)t-gvtve_!(547lok+87x3=(=_rekmvt#lt+%iv^+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
